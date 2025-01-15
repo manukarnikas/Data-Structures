@@ -1,0 +1,10 @@
+To run BinarySearch:
+
+javac -d . ../data/NumberGenerator.java BinarySearch.java
+java BinarySearch
+
+To run LinarySearch:
+
+javac -d . ../data/NumberGenerator.java linarySearch.java
+java LinarySearch
+
