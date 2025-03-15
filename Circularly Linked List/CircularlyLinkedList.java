@@ -51,7 +51,14 @@ class LinkedList {
     }
 
     void deleteAtBeg(){
-        // handle edge
+        if(head == null){
+            System.out.println("List is empty!");
+            return;
+        }
+        if(this.getLength() <=1 ){
+            head=null;
+            return;
+        }
         Node temp = head;
         while(temp.next != head){
             temp = temp.next;
@@ -59,6 +66,58 @@ class LinkedList {
         temp.next = head.next;
         head = head.next;
     }
+
+    void deleteAtPosition(int pos){
+        if(head == null){
+            System.out.println("List is empty!");
+            return;
+        }
+        if(pos>this.getLength()){
+            System.out.println("Invalid position");
+            return;
+        }
+        if(this.getLength()<=1){
+            head=null;
+            return;
+        }
+        Node temp = head;
+        int count = 0;
+        while(count<pos && temp.next.next!=head){
+            temp = temp.next;
+            count = count+1;
+        }
+        temp.next= temp.next.next;
+    }
+
+    void deleteAtEnd(){
+        if(head == null){
+            System.out.println("List is empty!");
+            return;
+        }
+        if(this.getLength() <=1 ){
+            head=null;
+            return;
+        }
+        Node temp = head;
+        while(temp.next.next != head){
+            temp = temp.next;
+        }
+        temp.next = head;
+    }
+
+    int getLength(){
+        if(head==null){
+            return 0;
+        }
+        Node temp = head;
+        int count =1;
+        while(temp.next != head){
+            temp = temp.next;
+            count = count+1;
+        }
+        return count;
+    }
+
 
     void display(){
         if(head == null){
@@ -82,7 +141,7 @@ class CircularlyLinkedList {
         linkedList.insertAtPosition(15,2);
         linkedList.insertAtEnd(25);
         linkedList.display();
-        linkedList.deleteAtBeg();
+        linkedList.deleteAtEnd();
         linkedList.display();
     }
 }
