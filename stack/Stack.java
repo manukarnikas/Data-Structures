@@ -33,6 +33,10 @@ class LinkedList {
     }
 
     void display(){
+        if(head == null){
+            System.out.println("Stack is empty!");
+            return;
+        }
         System.out.println("\n");
         Node temp = head;
         while(temp!=null){
