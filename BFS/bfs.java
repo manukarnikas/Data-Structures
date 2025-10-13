@@ -19,7 +19,7 @@ class bfs {
             for(String s:adjacentNodes){
                 if(!visited.contains(s)){
                     visited.add(s);
-                    visited.add(s);
+                    System.out.println(s);
                     queue.add(s);
                 }
             }
