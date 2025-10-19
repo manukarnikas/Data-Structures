@@ -80,8 +80,8 @@ class Tree{
         if(root == null){
             return;
         }
-        System.out.print(root.val+ " ");
         preorderTraversal(root.left);
+        System.out.print(root.val+ " ");
         preorderTraversal(root.right);
     }
 
@@ -89,8 +89,8 @@ class Tree{
         if(root == null){
             return;
         }
-        inorderTraversal(root.left);
         System.out.print(root.val+ " ");
+        inorderTraversal(root.left);
         inorderTraversal(root.right);
     }
 
